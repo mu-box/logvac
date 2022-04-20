@@ -12,8 +12,8 @@ import (
 
 	"github.com/jcelliott/lumber"
 
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/core"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/core"
 )
 
 func TestMain(m *testing.M) {

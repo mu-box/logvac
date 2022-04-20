@@ -7,12 +7,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nanobox-io/golang-syslogparser"
-	"github.com/nanobox-io/golang-syslogparser/rfc3164"
-	"github.com/nanobox-io/golang-syslogparser/rfc5424"
+	"github.com/mu-box/golang-syslogparser"
+	"github.com/mu-box/golang-syslogparser/rfc3164"
+	"github.com/mu-box/golang-syslogparser/rfc5424"
 
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/core"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/core"
 )
 
 type (

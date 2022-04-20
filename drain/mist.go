@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	mistCore "github.com/nanopack/mist/clients"
+	mistCore "github.com/mu-box/mist/clients"
 
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/core"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/core"
 )
 
 type pthinger interface {

@@ -1,3 +1,7 @@
+[![logvac logo](http://assets.microbox.rocks/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)  
+[![Build Status](https://travis-ci.org/mu-box/logvac.svg)](https://travis-ci.org/mu-box/logvac)
+[![GoDoc](https://godoc.org/github.com/mu-box/logvac?status.svg)](https://godoc.org/github.com/mu-box/logvac)
+
 # Logvac
 [![GoDoc](https://godoc.org/github.com/nanopack/logvac?status.svg)](https://godoc.org/github.com/nanopack/logvac)
 
@@ -124,5 +128,10 @@ See http examples [here](./api/README.md)
 
 ## Contributing
 
-Contributions to the logvac project are welcome and encouraged. Logvac is a [Nanobox](https://nanobox.io) project and contributions should follow the [Nanobox Contribution Process & Guidelines](https://docs.nanobox.io/contributing/).
+Contributions to the logvac project are welcome and encouraged. Logvac is a [Microbox](https://microbox.cloud) project and contributions should follow the [Microbox Contribution Process & Guidelines](https://docs.microbox.cloud/contributing/).
 
+## Licence
+
+MIT
+
+[![open source](http://assets.microbox.rocks/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/core"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/core"
 )
 
 type (

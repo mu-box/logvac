@@ -5,8 +5,8 @@ import (
 	"io"
 	"net"
 
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/core"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/core"
 )
 
 // Papertrail drain implements the publisher interface for publishing logs to papertrail.

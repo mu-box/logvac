@@ -1,5 +1,5 @@
-[![logvac logo](http://nano-assets.gopagoda.io/readme-headers/logvac.png)](http://nanobox.io/open-source#logvac)  
-[![Build Status](https://travis-ci.org/nanopack/logvac.svg)](https://travis-ci.org/nanopack/logvac)
+[![logvac logo](http://assets.microbox.rocks/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)  
+[![Build Status](https://travis-ci.org/mu-box/logvac.svg)](https://travis-ci.org/mu-box/logvac)
 
 # Logvac
 
@@ -36,7 +36,7 @@ Note: * = only if 'auth-address' configured
   "tag": "build-1234",
   "type": "deploy",
   "priority": "4",
-  "message": "$ mv nanobox/.htaccess .htaccess\n[✓] SUCCESS"
+  "message": "$ mv microbox/.htaccess .htaccess\n[✓] SUCCESS"
 }
 ```
 | Field | Description |
@@ -66,13 +66,13 @@ HTTP/1.1 200 OK
 
 publish log - attempt
 ```
-$ curl -ik https://localhost:6360 -d '{"id":"my-app","type":"deploy","message":"$ mv nanobox/.htaccess .htaccess\n[✓] SUCCESS"}'
+$ curl -ik https://localhost:6360 -d '{"id":"my-app","type":"deploy","message":"$ mv microbox/.htaccess .htaccess\n[✓] SUCCESS"}'
 HTTP/1.1 401 Unauthorized
 ```
 
 publish log - success
 ```
-$ curl -ik https://localhost:6360 -H 'X-USER-TOKEN: user' -d '{"id":"my-app","type":"deploy","message":"$ mv nanobox/.htaccess .htaccess\n[✓] SUCCESS"}'
+$ curl -ik https://localhost:6360 -H 'X-USER-TOKEN: user' -d '{"id":"my-app","type":"deploy","message":"$ mv microbox/.htaccess .htaccess\n[✓] SUCCESS"}'
 sucess!
 HTTP/1.1 200 OK
 ```
@@ -80,7 +80,7 @@ HTTP/1.1 200 OK
 get deploy logs
 ```
 $ curl -k https://localhost:6360?kind=deploy -H 'X-USER-TOKEN: user'
-[{"time":"2016-03-07T15:48:57.668893791-07:00","id":"my-app","tag":"","type":"deploy","priority":0,"message":"$ mv nanobox/.htaccess .htaccess\n[✓] SUCCESS"}]
+[{"time":"2016-03-07T15:48:57.668893791-07:00","id":"my-app","tag":"","type":"deploy","priority":0,"message":"$ mv microbox/.htaccess .htaccess\n[✓] SUCCESS"}]
 ```
 
 get app logs
@@ -91,10 +91,10 @@ $ curl -k https://localhost:6360 -H 'X-USER-TOKEN: user'
 
 ### Contributing
 
-Contributions to the logvac project are welcome and encouraged. Logvac is a [Nanobox](https://nanobox.io) project and contributions should follow the [Nanobox Contribution Process & Guidelines](https://docs.nanobox.io/contributing/).
+Contributions to the logvac project are welcome and encouraged. Logvac is a [Microbox](https://microbox.cloud) project and contributions should follow the [Microbox Contribution Process & Guidelines](https://docs.microbox.cloud/contributing/).
 
 ### Licence
 
 Mozilla Public License Version 2.0
 
-[![open source](http://nano-assets.gopagoda.io/open-src/nanobox-open-src.png)](http://nanobox.io/open-source)
+[![open source](http://assets.microbox.rocks/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

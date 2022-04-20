@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/nanopack/logvac/core"
-	"github.com/nanopack/logvac/drain"
+	"github.com/mu-box/logvac/core"
+	"github.com/mu-box/logvac/drain"
 )
 
 func addDrain(rw http.ResponseWriter, req *http.Request) {

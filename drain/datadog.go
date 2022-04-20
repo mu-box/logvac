@@ -8,7 +8,7 @@ import (
   "github.com/DataDog/datadog-agent/pkg/logs/config"
 	"github.com/DataDog/datadog-agent/pkg/logs/sender"
 
-	"github.com/nanopack/logvac/core"
+	"github.com/mu-box/logvac/core"
 )
 
 // Datadog drain implements the publisher interface for publishing logs to datadog.

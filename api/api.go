@@ -26,11 +26,11 @@ import (
 
 	"github.com/gorilla/pat"
 	"github.com/jcelliott/lumber"
-	"github.com/nanobox-io/golang-nanoauth"
+	"github.com/mu-box/golang-microauth"
 
-	"github.com/nanopack/logvac/authenticator"
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/drain"
+	"github.com/mu-box/logvac/authenticator"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/drain"
 )
 
 // Start starts the web server with the logvac functions
@@ -51,8 +51,8 @@ func Start(collector http.HandlerFunc) error {
 	router.Post("/logs", verify(handleRequest(collector)))
 	router.Get("/logs", verify(handleRequest(retriever)))
 
-	cert, _ := nanoauth.Generate("nanobox.io")
-	auth := nanoauth.Auth{
+	cert, _ := microauth.Generate("microbox.cloud")
+	auth := microauth.Auth{
 		Header:      "X-AUTH-TOKEN",
 		Certificate: cert,
 	}

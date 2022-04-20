@@ -15,12 +15,12 @@ import (
 
 	"github.com/jcelliott/lumber"
 
-	"github.com/nanopack/logvac/api"
-	"github.com/nanopack/logvac/authenticator"
-	"github.com/nanopack/logvac/collector"
-	"github.com/nanopack/logvac/config"
-	"github.com/nanopack/logvac/core"
-	"github.com/nanopack/logvac/drain"
+	"github.com/mu-box/logvac/api"
+	"github.com/mu-box/logvac/authenticator"
+	"github.com/mu-box/logvac/collector"
+	"github.com/mu-box/logvac/config"
+	"github.com/mu-box/logvac/core"
+	"github.com/mu-box/logvac/drain"
 )
 
 var (

@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/nanopack/logvac/authenticator"
+	"github.com/mu-box/logvac/authenticator"
 )
 
 func addKey(rw http.ResponseWriter, req *http.Request) {

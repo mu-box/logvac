@@ -20,17 +20,16 @@ getCurrTag() {
   rm -rf "./build"
 
 # build logvac
+DATE=$(date '+%Y-%m-%d')
+TIME=$(date '+%H:%M:%S')
+
 echo "Building logvac..."
-gox -ldflags="-s -X main.tag=$(getCurrTag) -X main.commit=$(getCurrCommit)" \
-  -osarch "linux/amd64" -output="./build/{{.OS}}/{{.Arch}}/logvac"
-  # -osarch "darwin/amd64 linux/amd64 windows/amd64" -output="./build/{{.OS}}/{{.Arch}}/logvac"
+gox -ldflags="-s -X main.buildDate=${DATE} -X main.buildTime=${TIME} -X main.tag=$(getCurrTag) -X main.commit=$(getCurrCommit)" \
+  -osarch "linux/$(go env | grep GOARCH | sed -E 's/GOARCH="(.*)"/\1/')" \
+  -output="./build/logvac"
 
 # look through each os/arch/file and generate an md5 for each
 echo "Generating md5s..."
-for os in $(ls ./build); do
-  for arch in $(ls ./build/${os}); do
-    for file in $(ls ./build/${os}/${arch}); do
-      cat "./build/${os}/${arch}/${file}" | ${MD5} | awk '{print $1}' >> "./build/${os}/${arch}/${file}.md5"
-    done
-  done
+for file in $(ls ./build); do
+  cat "./build/${file}" | ${MD5} | awk '{print $1}' >> "./build/${file}.md5"
 done
