@@ -6,13 +6,13 @@ import (
 	"net"
 
 	"github.com/mu-box/logvac/config"
-	"github.com/mu-box/logvac/core"
+	logvac "github.com/mu-box/logvac/core"
 )
 
 // Papertrail drain implements the publisher interface for publishing logs to papertrail.
 type Papertrail struct {
-	ID		string				 // the app id or name
-	Conn 	io.WriteCloser // connection to forward logs through
+	ID   string         // the app id or name
+	Conn io.WriteCloser // connection to forward logs through
 }
 
 // NewPapertrailClient creates a new mist publisher
@@ -26,7 +26,7 @@ func NewPapertrailClient(uri, id string) (*Papertrail, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Failed to dial papertrail - %s", err.Error())
 	}
-	
+
 	config.Log.Info("Connection to papertrail endpoint established")
 
 	return &Papertrail{Conn: conn, ID: id}, nil
@@ -43,19 +43,22 @@ func (p *Papertrail) Init() error {
 
 // Publish utilizes mist's Publish to "drain" a log message
 func (p *Papertrail) Publish(msg logvac.Message) {
-	date := fmt.Sprintf("%s %02d %02d:%02d:%02d", 
+	var tag = "?"
+	date := fmt.Sprintf("%s %02d %02d:%02d:%02d",
 		msg.Time.Month().String()[:3],
 		msg.Time.Day(),
 		msg.Time.Hour(),
 		msg.Time.Minute(),
 		msg.Time.Second())
 	id := fmt.Sprintf("%s.%s", p.ID, msg.Id)
-	tag := msg.Tag[0]
-	
+	if len(msg.Tag) > 0 {
+		tag = msg.Tag[0]
+	}
+
 	// the final message
-	message := fmt.Sprintf("<%d>%s %s %s: %s\n", 
+	message := fmt.Sprintf("<%d>%s %s %s: %s\n",
 		msg.Priority, date, id, tag, msg.Content)
-	
+
 	p.Conn.Write([]byte(message))
 }
 

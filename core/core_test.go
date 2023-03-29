@@ -13,7 +13,7 @@ import (
 	"github.com/jcelliott/lumber"
 
 	"github.com/mu-box/logvac/config"
-	"github.com/mu-box/logvac/core"
+	logvac "github.com/mu-box/logvac/core"
 )
 
 func TestMain(m *testing.M) {
@@ -75,9 +75,7 @@ func TestAddDrain(t *testing.T) {
 // Test removing a drain
 func TestRemoveDrain(t *testing.T) {
 	tag := "null"
-	drain := func(msg logvac.Message) {
-		return
-	}
+	drain := func(msg logvac.Message) {}
 	logvac.AddDrain(tag, drain)
 	logvac.RemoveDrain(tag)
 }

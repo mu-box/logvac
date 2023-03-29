@@ -59,7 +59,7 @@ type (
 	Drain struct {
 		Type       string `json:"type"`             // type of service ("papertrail")
 		URI        string `json:"endpoint"`         // uri of endpoint "log6.papertrailapp.com:199900"
-		ID				 string	`json:"id"`								// id to identify this app with external logger
+		ID         string `json:"id"`               // id to identify this app with external logger
 		AuthKey    string `json:"key,omitempty"`    // key or user for authentication
 		AuthSecret string `json:"secret,omitempty"` // password or secret for authentication
 	}
@@ -221,7 +221,7 @@ func (l *Writer) getWriter() (io.Writer, error) {
 		err := l.connect()
 		if err != nil {
 			if attempts > 2 {
-				return nil, fmt.Errorf("Too many failures - %s", err.Error())
+				return nil, fmt.Errorf("too many failures - %s", err.Error())
 			}
 			config.Log.Debug("Failed to connect - %s", err.Error())
 			time.Sleep(time.Second)

@@ -19,7 +19,7 @@ import (
 	"github.com/mu-box/logvac/authenticator"
 	"github.com/mu-box/logvac/collector"
 	"github.com/mu-box/logvac/config"
-	"github.com/mu-box/logvac/core"
+	logvac "github.com/mu-box/logvac/core"
 	"github.com/mu-box/logvac/drain"
 )
 
@@ -173,7 +173,7 @@ func rest(method, route, data string) ([]byte, error) {
 func initialize() {
 	config.ListenHttp = "127.0.0.1:4234"
 	config.ListenTcp = "127.0.0.1:4235"
-	config.ListenUdp = "127.0.0.1:4234"
+	config.ListenUdp = "127.0.0.1:4236"
 	config.DbAddress = "boltdb:///tmp/syslogTest/logvac.bolt"
 	config.AuthAddress = ""
 	config.Insecure = true

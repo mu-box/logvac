@@ -26,7 +26,7 @@ import (
 
 	"github.com/gorilla/pat"
 	"github.com/jcelliott/lumber"
-	"github.com/mu-box/golang-microauth"
+	microauth "github.com/mu-box/golang-microauth"
 
 	"github.com/mu-box/logvac/authenticator"
 	"github.com/mu-box/logvac/config"
@@ -87,12 +87,20 @@ func handleRequest(fn http.HandlerFunc) http.HandlerFunc {
 		// must be after req returns
 		getStatus := func(trw http.ResponseWriter) string {
 			r, _ := regexp.Compile("status:([0-9]*)")
-			return r.FindStringSubmatch(fmt.Sprintf("%+v", trw))[1]
+			out := r.FindStringSubmatch(fmt.Sprintf("%+v", trw))
+			if len(out) < 1 {
+				return ""
+			}
+			return out[1]
 		}
 
 		getWrote := func(trw http.ResponseWriter) string {
 			r, _ := regexp.Compile("written:([0-9]*)")
-			return r.FindStringSubmatch(fmt.Sprintf("%+v", trw))[1]
+			out := r.FindStringSubmatch(fmt.Sprintf("%+v", trw))
+			if len(out) < 1 {
+				return ""
+			}
+			return out[1]
 		}
 
 		config.Log.Debug(`%s - [%s] %s %s %s(%s) - "User-Agent: %s"`,

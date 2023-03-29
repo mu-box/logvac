@@ -165,7 +165,22 @@ func (fake *fakeSyslog) Dump() syslogparser.LogParts {
 	return parsed
 }
 
-// Location is for fakeSyslog to match an interface
-func (fake *fakeSyslog) Location(loc *time.Location) {
+// WithTimestampFormat is for fakeSyslog to match an interface
+func (fake *fakeSyslog) WithTimestampFormat(format string) {
+	return
+}
+
+// WithLocation is for fakeSyslog to match an interface
+func (fake *fakeSyslog) WithLocation(loc *time.Location) {
+	return
+}
+
+// WithHostname is for fakeSyslog to match an interface
+func (fake *fakeSyslog) WithHostname(hostname string) {
+	return
+}
+
+// WithTag is for fakeSyslog to match an interface
+func (fake *fakeSyslog) WithTag(tag string) {
 	return
 }

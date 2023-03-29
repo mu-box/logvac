@@ -19,7 +19,7 @@ import (
 	"github.com/mu-box/logvac/authenticator"
 	"github.com/mu-box/logvac/collector"
 	"github.com/mu-box/logvac/config"
-	"github.com/mu-box/logvac/core"
+	logvac "github.com/mu-box/logvac/core"
 	"github.com/mu-box/logvac/drain"
 )
 
@@ -39,12 +39,14 @@ func TestMain(m *testing.M) {
 	config.Token = ""
 	go api.Start(collector.CollectHandler)
 	time.Sleep(time.Second)
+
 	// start secure api
 	config.Token = "secret"
 	config.Insecure = false
 	config.ListenHttp = secureHttp
 	go api.Start(collector.CollectHandler)
-	<-time.After(time.Second)
+	time.Sleep(time.Second)
+
 	rtn := m.Run()
 
 	// clean test dir
@@ -56,6 +58,16 @@ func TestMain(m *testing.M) {
 // test cors
 func TestCors(t *testing.T) {
 	body, err := irest("OPTIONS", "/?type=app&id=log-test&start=0&limit=1", "")
+	if err != nil {
+		t.Error(err)
+		t.FailNow()
+	}
+	if string(body) != "success!\n" {
+		t.Errorf("%q doesn't match expected out", body)
+		t.FailNow()
+	}
+
+	body, err = rest("OPTIONS", "/?type=app&id=log-test&start=0&limit=1", "")
 	if err != nil {
 		t.Error(err)
 		t.FailNow()
@@ -205,9 +217,9 @@ func initialize() {
 	secureHttp = "127.0.0.1:2236"
 	insecureHttp = "127.0.0.1:2234"
 	config.Insecure = true
-	config.ListenHttp = "127.0.0.1:2234"
+	config.ListenHttp = "0.0.0.0:2234"
 	config.ListenTcp = "127.0.0.1:2235"
-	config.ListenUdp = "127.0.0.1:2234"
+	config.ListenUdp = "127.0.0.1:2237"
 	config.DbAddress = "boltdb:///tmp/apiTest/logvac.bolt"
 	config.AuthAddress = ""
 	config.Log = lumber.NewConsoleLogger(lumber.LvlInt("ERROR"))

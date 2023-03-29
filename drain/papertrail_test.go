@@ -2,9 +2,10 @@ package drain_test
 
 import (
 	"bytes"
+	"regexp"
 	"testing"
 
-	"github.com/mu-box/logvac/core"
+	logvac "github.com/mu-box/logvac/core"
 	"github.com/mu-box/logvac/drain"
 )
 
@@ -23,11 +24,11 @@ func TestPTrailPublish(t *testing.T) {
 		t.Fatal("Failed to create a thing")
 	}
 
-	msg := logvac.Message{Raw: []byte("This is a message\n")}
+	msg := logvac.Message{Content: "This is a message\n"}
 
 	trailTest.Publish(msg)
-	if b.String() != string(msg.Raw) {
-		t.Fatalf("Failed to publish - '%s'", b.String())
+	if match, err := regexp.Match(msg.Content, b.Bytes()); !match || err != nil {
+		t.Fatalf("Failed to publish (%s) - Got '%s'; Expected '%s'", err.Error(), b.String(), msg.Content)
 	}
 	trailTest.Close()
 }

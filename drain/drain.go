@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/mu-box/logvac/config"
-	"github.com/mu-box/logvac/core"
+	logvac "github.com/mu-box/logvac/core"
 )
 
 type (
