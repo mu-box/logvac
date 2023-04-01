@@ -3,7 +3,7 @@
 [![GoDoc](https://godoc.org/github.com/mu-box/logvac?status.svg)](https://godoc.org/github.com/mu-box/logvac)
 
 # Logvac
-[![GoDoc](https://godoc.org/github.com/nanopack/logvac?status.svg)](https://godoc.org/github.com/nanopack/logvac)
+[![GoDoc](https://godoc.org/github.com/mu-box/logvac?status.svg)](https://godoc.org/github.com/mu-box/logvac)
 
 Simple, lightweight, api-driven log aggregation service with realtime push capabilities and historical persistence.
 

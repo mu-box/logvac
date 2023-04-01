@@ -15,8 +15,8 @@ RUN apt-get update && \
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 # setup the app dir/working directory
-RUN mkdir -p /go/src/github.com/nanopack/logvac
-WORKDIR /go/src/github.com/nanopack/logvac
+RUN mkdir -p /go/src/github.com/mu-box/logvac
+WORKDIR /go/src/github.com/mu-box/logvac
 
 # copy the source
 COPY . .

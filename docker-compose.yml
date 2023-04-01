@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/go/src/github.com/nanopack/logvac
+      - .:/go/src/github.com/mu-box/logvac
     env_file:
       - '.env'
       - '.env.secret'
