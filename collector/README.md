@@ -1,5 +1,5 @@
-[![logvac logo](http://assets.microbox.rocks/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)  
-[![Build Status](https://travis-ci.org/mu-box/logvac.svg)](https://travis-ci.org/mu-box/logvac)
+[![logvac logo](http://microbox.rocks/assets/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)
+[![Build Status](https://github.com/mu-box/logvac/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/logvac/actions)
 
 # Logvac
 
@@ -18,7 +18,7 @@ Logvac can receive logs from rsyslog
 ```
 > `sudo service rsyslog restart` with the preceding config file should start dumping logs to logvac
 
-See http examples [here](../api/README.md)  
+See http examples [here](../api/README.md)
 
 ### Contributing
 
@@ -26,6 +26,6 @@ Contributions to the logvac project are welcome and encouraged. Logvac is a [Mic
 
 ### Licence
 
-Mozilla Public License Version 2.0
+This project is released under [The MIT License](http://opensource.org/licenses/MIT).
 
-[![open source](http://assets.microbox.rocks/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)
+[![open source](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

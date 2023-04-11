@@ -1,6 +1,6 @@
 module github.com/mu-box/logvac
 
-go 1.17
+go 1.20
 
 require (
 	github.com/DataDog/datadog-agent v0.0.0-20230327234719-604cb4dc262f

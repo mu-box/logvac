@@ -1,5 +1,5 @@
-[![logvac logo](http://assets.microbox.rocks/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)  
-[![Build Status](https://travis-ci.org/mu-box/logvac.svg)](https://travis-ci.org/mu-box/logvac)
+[![logvac logo](http://microbox.rocks/assets/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)
+[![Build Status](https://github.com/mu-box/logvac/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/logvac/actions)
 [![GoDoc](https://godoc.org/github.com/mu-box/logvac?status.svg)](https://godoc.org/github.com/mu-box/logvac)
 
 # Logvac
@@ -116,9 +116,9 @@ logvac add-token -t "user1-token" -A "boltdb:///tmp/log-auth.bolt"
 ```
 
 #### Adding|Viewing Logs
-See syslog examples [here](./collector/README.md)  
-See http examples [here](./api/README.md)  
-**Important Note:** javascript clients may see up-to a ~100 nanosecond variance when specifying 'start=xxx' as a query parameter due to javascript's lack of precision for the 'number' datatype  
+See syslog examples [here](./collector/README.md)
+See http examples [here](./api/README.md)
+**Important Note:** javascript clients may see up-to a ~100 nanosecond variance when specifying 'start=xxx' as a query parameter due to javascript's lack of precision for the 'number' datatype
 
 ## Todo
 
@@ -132,6 +132,6 @@ Contributions to the logvac project are welcome and encouraged. Logvac is a [Mic
 
 ## Licence
 
-MIT
+This project is released under [The MIT License](http://opensource.org/licenses/MIT).
 
-[![open source](http://assets.microbox.rocks/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)
+[![open source](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

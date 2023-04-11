@@ -1,5 +1,5 @@
-[![logvac logo](http://assets.microbox.rocks/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)  
-[![Build Status](https://travis-ci.org/mu-box/logvac.svg)](https://travis-ci.org/mu-box/logvac)
+[![logvac logo](http://microbox.rocks/assets/readme-headers/logvac.png)](http://microbox.cloud/open-source#logvac)
+[![Build Status](https://github.com/mu-box/logvac/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/logvac/actions)
 
 # Logvac
 
@@ -95,6 +95,6 @@ Contributions to the logvac project are welcome and encouraged. Logvac is a [Mic
 
 ### Licence
 
-Mozilla Public License Version 2.0
+This project is released under [The MIT License](http://opensource.org/licenses/MIT).
 
-[![open source](http://assets.microbox.rocks/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)
+[![open source](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)
